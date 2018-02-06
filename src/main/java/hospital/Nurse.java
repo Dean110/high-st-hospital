@@ -1,15 +1,19 @@
 package hospital;
 
-public class Nurse extends Employee {
-
+public class Nurse extends Employee implements MedicalDuties {
+	@Override
 	public void drawBlood(Bleedable patient) {
 		// TODO Auto-generated method stub
 		patient.removeBlood(1);
 	}
 
 	@Override
+	public void administerCare(Patient patient) {
+		patient.giveHealth(5);
+	}
+
+	@Override
 	public int getSalary() {
-		// TODO Auto-generated method stub
 		return 50000;
 	}
 
