@@ -3,6 +3,11 @@ package hospital;
 public class Janitor extends Employee {
 	boolean isSweeping;
 
+	Janitor(String empNumber, String empName) {
+		this.empNumber = empNumber;
+		this.empName = empName;
+	}
+
 	@Override
 	public int getSalary() {
 

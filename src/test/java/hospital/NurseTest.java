@@ -10,7 +10,7 @@ public class NurseTest {
 
 	@Test
 	public void shouldDrawBlood() {
-		Nurse underTest = new Nurse();
+		Nurse underTest = new Nurse("", "");
 		Patient patient = new Patient(256);
 
 		int bloodsBefore = patient.getBloods();
@@ -34,7 +34,7 @@ public class NurseTest {
 
 	@Test
 	public void shouldDrawBloodFromTestDouble() {
-		Nurse underTest = new Nurse();
+		Nurse underTest = new Nurse("", "");
 		Bleedable patient = new BleedableDouble();
 
 		underTest.drawBlood(patient);
@@ -43,14 +43,14 @@ public class NurseTest {
 
 	@Test
 	public void shouldHaveASalary() {
-		Employee underTest = new Nurse();
+		Employee underTest = new Nurse("", "");
 		int salary = underTest.getSalary();
 		assertThat(salary, is(50000));
 	}
 
 	@Test
 	public void shouldCareForPatients() {
-		Nurse underTest = new Nurse();
+		Nurse underTest = new Nurse("", "");
 		Patient patient = new Patient();
 		int healthBefore = patient.getHealth();
 		underTest.administerCare(patient);
