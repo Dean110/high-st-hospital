@@ -5,22 +5,21 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-public class DoctorTest {
-
+public class NurseTest {
 	private static final String BOB = "Bob";
 
-	@Test
-	public void shouldDrawBlood() {
-		Doctor underTest = new Doctor();
-		Patient patient = new Patient(256);
-
-		int bloodsBefore = patient.getBloods();
-		underTest.drawBlood(patient);
-
-		int bloodsAfter = patient.getBloods();
-
-		assertThat(bloodsBefore - bloodsAfter, is(1));
-	}
+	// @Test
+	// public void shouldDrawBlood() {
+	// Nurse underTest = new Nurse();
+	// Patient patient = new Patient(256);
+	//
+	// int bloodsBefore = patient.getBloods();
+	// underTest.drawBlood(patient);
+	//
+	// int bloodsAfter = patient.getBloods();
+	//
+	// assertThat(bloodsBefore - bloodsAfter, is(1));
+	// }
 
 	boolean wasBled = false;
 
@@ -35,7 +34,7 @@ public class DoctorTest {
 
 	@Test
 	public void shouldDrawBloodFromTestDouble() {
-		Doctor underTest = new Doctor();
+		Nurse underTest = new Nurse();
 		Bleedable patient = new BleedableDouble();
 
 		underTest.drawBlood(patient);
@@ -44,15 +43,16 @@ public class DoctorTest {
 
 	@Test
 	public void shouldHaveASalary() {
-		Employee underTest = new Doctor();
+		Employee underTest = new Nurse();
 		int salary = underTest.getSalary();
-		assertThat(salary, is(90000));
+		assertThat(salary, is(50000));
 	}
 
 	// @Test
 	// public void shouldHaveAName() {
-	// Employee underTest = new Doctor();
+	// Employee underTest = new Nurse();
 	// String name = underTest.getName();
 	// assertThat(name, is(BOB));
 	// }
+
 }
